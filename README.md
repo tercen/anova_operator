@@ -19,7 +19,7 @@ packrat::init(options = list(
   use.cache = TRUE
   ))
   
-git add -A && git commit -m "use colors" && git tag -a 0.0.2 -m "++" && git push && git push --tags
+git add -A && git commit -m "length and not len" && git tag -a 0.0.3 -m "++" && git push && git push --tags
 ```
 
 ```R

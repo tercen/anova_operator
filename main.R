@@ -10,7 +10,7 @@ do.anova = function(df){
   
 ctx = tercenCtx()
 
-if (len(ctx$colors) < 1) stop("A color factor is required.")
+if (length(ctx$colors) < 1) stop("A color factor is required.")
  
 ctx %>% 
   select(.ci, .ri, .y) %>%
