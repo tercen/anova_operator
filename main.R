@@ -3,26 +3,18 @@ library(dplyr)
 
 do.anova = function(df){
   pr = NaN
-  aLm = try(lm(.y ~ .x, data=df), silent = TRUE)
-  if(!inherits(aLm, 'try-error')){
-    pr = (anova(aLm)$'Pr(>F)')[[1]]
-  }  
-
-  return (data.frame(.ri = df$.ri[1],
-                     .ci = df$.ci[1],
-                     pr=c(pr)))
+  aLm = try(lm(.y ~ .group.colors, data=df), silent = TRUE)
+  if(!inherits(aLm, 'try-error')) pr = (anova(aLm)$'Pr(>F)')[[1]]
+  return (data.frame(.ri = df$.ri[1], .ci = df$.ci[1], pr= c(pr)))
 }
- 
+  
+ctx = tercenCtx()
 
-# df = data.frame(.ri=c(0,0,0,0,0,0,0,0),
-#                 .ci=c(0,0,0,0,0,0,0,0),
-#                 .y=c(1.0,2.0,3.0,4.3, 10.2,10.3,11.3,12.3),
-#                 .x=c("0","0","0","0","1","1","1","1"))
-# 
-# do.anova(df)
+if (len(ctx$colors) < 1) stop("A color factor is required.")
  
-(ctx = tercenCtx())  %>% 
-  select(.y,.x,.ci, .ri) %>% 
+ctx %>% 
+  select(.ci, .ri, .y) %>%
+  mutate(.group.colors = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors))) %>%
   group_by(.ci, .ri) %>%
   do(do.anova(.)) %>%
   ctx$addNamespace() %>%
