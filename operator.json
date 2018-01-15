@@ -1,0 +1,10 @@
+{
+  "name": "ANOVA",
+  "description": "Analysis of variance",
+  "tags": ["basic statistics"],
+  "authors": ["tercen"],
+  "urls": ["https://github.com/tercen/anova_operator"],
+  "properties": []
+}
+
+
