@@ -1,10 +1,29 @@
-# ANOVA : Analysis of variance
+# anova operator
 
-```
-https://github.com/tercen/anova_operator.git
-```
+#### Description
+`anova` operator performs an analaysis of variance of the data
 
-```R
-packrat::init(options = list(use.cache = TRUE))
-```
+##### Usage
+Input projection|.
+---|---
+`color`   | represents the groups to compare
+`y-axis`| measurement value
+
+Output relations|.
+---|---
+`pr`| numeric, p-value calculated per cell
+
+##### Details
+`anova` operator performs an analaysis of variance of the data
+
+
+#### References
+see https://en.wikipedia.org/wiki/Analysis_of_variance
+
+
+##### See Also
+[ttest](https://github.com/tercen/ttest_operator)
+
+#### Examples
+
 
