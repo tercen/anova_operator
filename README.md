@@ -22,7 +22,7 @@ see https://en.wikipedia.org/wiki/Analysis_of_variance
 
 
 ##### See Also
-[ttest](https://github.com/tercen/ttest_operator)
+[ttest](https://github.com/tercen/ttest_operator), [rfImp](https://github.com/tercen/rfImp_operator)
 
 #### Examples
 
