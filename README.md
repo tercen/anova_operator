@@ -1,12 +1,14 @@
-# anova operator
+# ANOVA operator
 
-#### Description
-`anova` operator performs an analaysis of variance of the data
+##### Description
+
+The `anova` operator performs an analysis of variance of the data.
 
 ##### Usage
+
 Input projection|.
 ---|---
-`color`   | represents the groups to compare
+`color` | represents the groups to compare
 `y-axis`| measurement value
 
 Output relations|.
@@ -14,16 +16,13 @@ Output relations|.
 `pr`| numeric, p-value calculated per cell
 
 ##### Details
-`anova` operator performs an analaysis of variance of the data
 
+`anova` operator performs an analysis of variance of the data. The operator is based on the [anova R function](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/anova).
 
-#### References
-see https://en.wikipedia.org/wiki/Analysis_of_variance
+##### References
 
+See [Analysis of variance on Wikipedia](https://en.wikipedia.org/wiki/Analysis_of_variance).
 
 ##### See Also
+
 [ttest](https://github.com/tercen/ttest_operator), [rfImp](https://github.com/tercen/rfImp_operator)
-
-#### Examples
-
-
