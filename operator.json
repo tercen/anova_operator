@@ -1,10 +1,21 @@
 {
   "name": "ANOVA",
-  "description": "Analysis Of Variance: A statistical model to analyze the differences among Means in a sample. Often used to test a Null Hypothesis in experimental data.",
+  "description": "Analysis Of Variance: test for significant differences among group means.",
   "tags": ["statistical testing", "test", "linear model"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/anova_operator"],
-  "properties": []
+  "properties": [
+   {
+    "kind": "EnumeratedProperty",
+    "name": "method",
+    "defaultValue": "one.way",
+    "values": [
+      "one.way",
+      "two.way"
+    ],
+    "description": "Whether to consider interactions between effects (two.way) or not (one.way) in the model."
+  }
+  ]
 }
 
 
