@@ -1,4 +1,4 @@
-# ANOVA operator
+# ANOVA
 
 ##### Description
 
@@ -13,7 +13,13 @@ Input projection|.
 
 Output relations|.
 ---|---
-`pr`| numeric, p-value calculated per cell
+`Effect`| Effect
+`DFn`| Degrees of Freedom in the numerator
+`DFd`| Degrees of Freedom in the denominator
+`F`| F-value
+`p`| p-value
+`significance`| Highlights p-values less than the traditional alpha level of .05
+`ges`| Generalized Eta-Squared measure of effect size
 
 ##### Details
 
@@ -25,4 +31,4 @@ See [Analysis of variance on Wikipedia](https://en.wikipedia.org/wiki/Analysis_o
 
 ##### See Also
 
-[ttest](https://github.com/tercen/ttest_operator), [rfImp](https://github.com/tercen/rfImp_operator)
+[t-Test operator](https://github.com/tercen/t_test_operator)
