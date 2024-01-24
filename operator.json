@@ -5,9 +5,7 @@
   "description": [
     "Analysis Of Variance: test for significant differences among group means."
   ],
-  "tags": [
-    ["statistical testing", "linear model"]
-  ],
+  "tags": ["statistical testing", "linear model"],
   "authors": [
     "tercen"
   ],
