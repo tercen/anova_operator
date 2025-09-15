@@ -11,7 +11,7 @@
   "urls": [
     "https://github.com/tercen/anova_operator"
   ],
-  "container": "tercen/anova_operator:1.0.0",
+  "container": "tercen/anova_operator:1.1.0",
   "properties": [
     {
       "kind": "EnumeratedProperty",
@@ -34,12 +34,22 @@
         "metaFactors": [
           {
             "kind": "MetaFactor",
-            "name": "Group",
+            "name": "Column Stratification",
             "type": "",
-            "description": "Group factor to compare",
-            "ontologyMapping": "color",
+            "description": "Optional column stratification factor",
+            "ontologyMapping": "optional_column",
             "crosstabMapping": "column",
-            "cardinality": "1..n",
+            "cardinality": "0..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Row Stratification",
+            "type": "",
+            "description": "Optional row stratification factor",
+            "ontologyMapping": "optional_row",
+            "crosstabMapping": "row",
+            "cardinality": "0..n",
             "factors": []
           }
         ],
@@ -55,6 +65,16 @@
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
                 "cardinality": "1",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Group",
+                "type": "",
+                "description": "Group factor to compare",
+                "ontologyMapping": "color",
+                "crosstabMapping": "column",
+                "cardinality": "1..n",
                 "factors": []
               }
             ]
