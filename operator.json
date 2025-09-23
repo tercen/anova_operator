@@ -11,7 +11,7 @@
   "urls": [
     "https://github.com/tercen/anova_operator"
   ],
-  "container": "tercen/anova_operator:1.1.1",
+  "container": "ghcr.io/tercen/anova_operator:1.1.2",
   "properties": [
     {
       "kind": "EnumeratedProperty",
