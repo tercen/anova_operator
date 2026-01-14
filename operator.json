@@ -84,7 +84,7 @@
                 "description": "Optional pairing/blocking factor for repeated measures",
                 "ontologyMapping": "label",
                 "crosstabMapping": "label",
-                "cardinality": "0..n",
+                "cardinality": "0..1",
                 "factors": []
               }
             ]
