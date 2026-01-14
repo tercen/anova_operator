@@ -8,8 +8,11 @@ The `anova` operator performs an analysis of variance of the data.
 
 Input projection|.
 ---|---
-`color` | represents the groups to compare
 `y-axis`| measurement value
+`color` | represents the groups to compare
+`labels`| optional, pairing/blocking factor for repeated measures
+`row`   | optional, row stratification factor
+`column`| optional, column stratification factor
 
 Output relations|.
 ---|---
