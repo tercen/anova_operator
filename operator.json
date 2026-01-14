@@ -72,9 +72,19 @@
                 "name": "Group",
                 "type": "",
                 "description": "Group factor to compare",
-                "ontologyMapping": "color",
-                "crosstabMapping": "column",
+                "ontologyMapping": "group",
+                "crosstabMapping": "color",
                 "cardinality": "1..n",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Pairing",
+                "type": "",
+                "description": "Optional pairing/blocking factor for repeated measures",
+                "ontologyMapping": "label",
+                "crosstabMapping": "label",
+                "cardinality": "0..n",
                 "factors": []
               }
             ]
