@@ -37,7 +37,7 @@
             "name": "Column Stratification",
             "type": "",
             "description": "Optional column stratification factor",
-            "ontologyMapping": "optional_column",
+            "ontologyMapping": "observation",
             "crosstabMapping": "column",
             "cardinality": "0..n",
             "factors": []
@@ -47,7 +47,7 @@
             "name": "Row Stratification",
             "type": "",
             "description": "Optional row stratification factor",
-            "ontologyMapping": "optional_row",
+            "ontologyMapping": "variable",
             "crosstabMapping": "row",
             "cardinality": "0..n",
             "factors": []
@@ -82,7 +82,7 @@
                 "name": "Pairing",
                 "type": "",
                 "description": "Optional pairing/blocking factor for repeated measures",
-                "ontologyMapping": "label",
+                "ontologyMapping": "pairing",
                 "crosstabMapping": "label",
                 "cardinality": "0..1",
                 "factors": []
