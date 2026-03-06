@@ -11,7 +11,7 @@
   "urls": [
     "https://github.com/tercen/anova_operator"
   ],
-  "container": "tercen/anova_operator:1.0.0",
+  "container": "ghcr.io/tercen/anova_operator:1.1.2",
   "properties": [
     {
       "kind": "EnumeratedProperty",
@@ -34,12 +34,22 @@
         "metaFactors": [
           {
             "kind": "MetaFactor",
-            "name": "Group",
+            "name": "Column Stratification",
             "type": "",
-            "description": "Group factor to compare",
-            "ontologyMapping": "color",
+            "description": "Optional column stratification factor",
+            "ontologyMapping": "observation",
             "crosstabMapping": "column",
-            "cardinality": "1..n",
+            "cardinality": "0..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Row Stratification",
+            "type": "",
+            "description": "Optional row stratification factor",
+            "ontologyMapping": "variable",
+            "crosstabMapping": "row",
+            "cardinality": "0..n",
             "factors": []
           }
         ],
@@ -56,8 +66,90 @@
                 "crosstabMapping": "y",
                 "cardinality": "1",
                 "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Group",
+                "type": "",
+                "description": "Group factor to compare",
+                "ontologyMapping": "group",
+                "crosstabMapping": "color",
+                "cardinality": "1..n",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Pairing",
+                "type": "",
+                "description": "Optional pairing/blocking factor for repeated measures",
+                "ontologyMapping": "pairing",
+                "crosstabMapping": "label",
+                "cardinality": "0..1",
+                "factors": []
               }
             ]
+          }
+        ]
+      }
+    ],
+    "outputSpecsV2": [
+      {
+        "kind": "OperatorJoinSpec",
+        "joinOperators": [
+          {
+            "kind": "JoinOperator",
+            "joinType": "left",
+            "leftPair": {
+              "kind": "ColumnPair",
+              "lColumns": [
+                "Row Stratification",
+                "Column Stratification"
+              ],
+              "rColumns": [
+                "Row Stratification",
+                "Column Stratification"
+              ]
+            },
+            "rightRelation": {
+              "kind": "TableRelation",
+              "attributes": [
+                {
+                  "kind": "Attribute",
+                  "name": "Effect",
+                  "type": "string"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "DFn",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "DFd",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "F",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "p",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "significance",
+                  "type": "string"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "ges",
+                  "type": "double"
+                }
+              ]
+            }
           }
         ]
       }
